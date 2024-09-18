@@ -50,8 +50,9 @@ public class Estoque {
     public static void main(String[] args) {
         Estoque estoque = new Estoque();
 
-        estoque.adicionarProduto(new Produto("Sunga", "P","Kit Natação", "Masc", "Infantil", 50));
-        estoque.adicionarProduto(new Produto("Sunga", "G", "Kit Natação", "Masc", "Adulto", 12));
+        estoque.adicionarProduto(new Produto("Maiô", "P","Kit Natação", "Fem", "Infantil", 50));
+        estoque.adicionarProduto(new Produto("Maiô", "G", "Kit Natação", "Fem", "Adulto", 12));
+        
         estoque.adicionarProduto(new Produto("Sunga", "M", "Kit Natação", "Masc", "Adulto", 9));
         estoque.adicionarProduto(new Produto("Sunga", "GG", "Kit Natação", "Masc", "Infantil", 34));
 

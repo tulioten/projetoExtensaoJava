@@ -76,8 +76,5 @@ public class Produto {
     "\n quantidade= " + quantidade +
     "\n }";
   }
-  // public static void main(String [] args) {
-  //   Produto sunga = new Produto("Sunga", "M", "Kit natação", "masc", "Adulto", 50);
-  //   System.out.println(sunga.toString());
-  // }
+
 }

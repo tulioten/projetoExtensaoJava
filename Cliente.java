@@ -73,8 +73,4 @@ public class Cliente {
     this.UF = UF;
   }
 
-  //   public static void main(String [] args) {
-  //   Cliente Pentecoste = new Cliente("Leila", "Pentecoste", "leila@aabb.br", "AABB Pentecoste", "Ceará");
-  //   System.out.println(Pentecoste.toString());
-  // }
 }
