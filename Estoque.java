@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class Estoque {
-    private Map<String, Map<String, Produto>> produtos;
+    private Map<String, Produto> produtos;
 
     public Estoque() {
         produtos = new HashMap<>();
@@ -15,7 +15,7 @@ public class Estoque {
         String tipo = produto.getTipo();
         List<Tamanho> tamanho = produto.verificarQuantidade();
         
-        produtos.putIfAbsent(nome, new HashMap<>());
+        produtos.putIfAbsent(nome, produto);
 
         // System.out.println(produto);
         // System.out.println(tamanho);
@@ -24,35 +24,42 @@ public class Estoque {
     }
 
     public void imprimirEstoque() {
-        for (Entry<String, Map<String, Produto>> entry : produtos.entrySet()) {
+        for (Entry<String, Produto> entry : produtos.entrySet()) {
             String nome = entry.getKey();
+            Produto produto = entry.getValue(); 
             System.out.println(entry.getKey());
+            System.out.println(produto.verificarQuantidade());
             // List<Tamanho> tamanhos = entry.getValue()
             // System.out.println("\nProduto: " + nome  );
             // System.out.println();
-
-            // for (Entry<String, Produto> tamanhoEntry : entry.getValue().entrySet()) {
-                // List<Tamanho> tamanhos = tamanhoEntry.getValue().verificarQuantidade();
-                // System.out.println(" Tamanho: " + tamanhos);
-                //         } 
-                //     }
         }
     }
 
-    // public Map<String, Integer> quantidadeTotalPorProduto() {
-    //     Map<String, Integer> totalPorProduto = new HashMap<>();
+    public void quantidadeTotalPorProduto(Produto produto){}
 
-    //     for (Entry<String, Map<String, Produto>> entry : produtos.entrySet()) {
-    //         String nomeProduto = entry.getKey();
-    //         int total = 0;
+    public void quantidadeTotalPorProduto() {
+        Map<String, Integer> totalPorProduto = new HashMap<>();
 
-    //         for (Produto produto : entry.getValue().values()) {
-    //             total += produto.verificarQuantidade();
-    //         }
-    //         totalPorProduto.put(nomeProduto, total);
-    //     }
-    //     return totalPorProduto;
-    // }
+        for (Entry<String, Produto> entry : produtos.entrySet()) {
+            System.out.println(entry.getValue());
+            Produto produto = entry.getValue();
+
+            List<Tamanho>tamanhosPorProduto = produto.verificarQuantidade();
+            int total = 0;
+            for (Tamanho t : tamanhosPorProduto) {
+                total += t.getQuantidade();
+            }
+            System.out.println(entry.getValue() + " " + total);
+            // String nomeProduto = entry.getKey();
+            // int total = 0;
+
+            // for (Produto produto : entry.getValue().values()) {
+            //     ;
+            // }
+            // totalPorProduto.put(nomeProduto, total);
+        }
+        // return totalPorProduto;
+    }
 
     public static void main(String[] args) {
         Estoque estoque = new Estoque();
@@ -60,7 +67,8 @@ public class Estoque {
         estoque.adicionarProduto(new Produto("Sunga", "Kit natação", "uniforme"));
         estoque.adicionarProduto(new Produto("Maiô", "Kit natação", "uniforme"));
         estoque.adicionarProduto(new Produto("Blusa M/M", "Kit Educando", "uniforme"));
-        estoque.imprimirEstoque();
+        // estoque.imprimirEstoque();
+        estoque.quantidadeTotalPorProduto();
 
         // Map<String, Integer> totais = estoque.quantidadeTotalPorProduto();
         // System.out.println(totais);

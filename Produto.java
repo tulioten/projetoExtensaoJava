@@ -69,14 +69,14 @@ public class Produto {
   public List<Tamanho> criarTamanhosFixos() {
     List<Tamanho> tamanhosFixos = new ArrayList<>();
 
-    tamanhosFixos.add(new Tamanho("p_infantil", 0));
-    tamanhosFixos.add(new Tamanho("m_infantil", 0));
-    tamanhosFixos.add(new Tamanho("g_infantil", 0));
-    tamanhosFixos.add(new Tamanho("gg_infantil", 0));
-    tamanhosFixos.add(new Tamanho("p_adulto", 0));
-    tamanhosFixos.add(new Tamanho("m_adulto", 0));
-    tamanhosFixos.add(new Tamanho("g_adulto", 0));
-    tamanhosFixos.add(new Tamanho("gg_adulto", 0));
+    tamanhosFixos.add(new Tamanho("p_infantil", 3));
+    tamanhosFixos.add(new Tamanho("m_infantil", 4));
+    tamanhosFixos.add(new Tamanho("g_infantil", 12));
+    tamanhosFixos.add(new Tamanho("gg_infantil", 10));
+    tamanhosFixos.add(new Tamanho("p_adulto", 9));
+    tamanhosFixos.add(new Tamanho("m_adulto", 20));
+    tamanhosFixos.add(new Tamanho("g_adulto", 14));
+    tamanhosFixos.add(new Tamanho("gg_adulto", 3));
 
     return tamanhosFixos;
   }
