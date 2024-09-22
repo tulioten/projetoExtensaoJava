@@ -33,9 +33,9 @@ public class Produto {
     return tipo;
   }
 
-  // public Produto() {
-  //   new Produto();
-  // }
+  public Produto() {
+    new Produto();
+  }
 
   public Produto(String nome, String categoria, String tipo) {
     this.id = UUID.randomUUID();
@@ -93,4 +93,22 @@ public class Produto {
     "\n }";
   }
 
+  // public static void main(String[] args) {
+  //   Produto Sunga = new Produto("Sunga", "Natacao", "uniforme");
+    
+  //   Sunga.alterarQuantidade("p_infantil", 12);
+  //   Sunga.alterarQuantidade("m_infantil", 25);
+  //   Sunga.alterarQuantidade("g_infantil", 14);
+  //   Sunga.alterarQuantidade("gg_infantil", 3);
+  //   Sunga.alterarQuantidade("p_adulto", 9);
+  //   Sunga.alterarQuantidade("m_adulto", 17);
+  //   Sunga.alterarQuantidade("g_adulto", 5);
+  //   Sunga.alterarQuantidade("gg_adulto", 2);
+  //   System.out.println(Sunga);
+  // }
+
 }
+
+
+
+

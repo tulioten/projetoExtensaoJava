@@ -17,25 +17,26 @@ public class Estoque {
         
         produtos.putIfAbsent(nome, new HashMap<>());
 
-        System.out.println(produto);
-        System.out.println(tamanho);
-        System.out.println(tipo);
+        // System.out.println(produto);
+        // System.out.println(tamanho);
+        // System.out.println(tipo);
         // produtos.get(nome).put( produto);
     }
 
     public void imprimirEstoque() {
         for (Entry<String, Map<String, Produto>> entry : produtos.entrySet()) {
             String nome = entry.getKey();
-            System.out.println("\nProduto: " + nome + "\n");
+            System.out.println(entry.getKey());
+            // List<Tamanho> tamanhos = entry.getValue()
+            // System.out.println("\nProduto: " + nome  );
+            // System.out.println();
 
-            for (Entry<String, Produto> tamanhoEntry : entry.getValue().entrySet()) {
-                Produto produto = tamanhoEntry.getValue();
-                System.out.println(" Tamanho: " + produto.verificarQuantidade() + 
-                                    "\n Categoria: " + produto.getCategoria()
-
-                );
-                        } 
-                    }
+            // for (Entry<String, Produto> tamanhoEntry : entry.getValue().entrySet()) {
+                // List<Tamanho> tamanhos = tamanhoEntry.getValue().verificarQuantidade();
+                // System.out.println(" Tamanho: " + tamanhos);
+                //         } 
+                //     }
+        }
     }
 
     // public Map<String, Integer> quantidadeTotalPorProduto() {
@@ -57,10 +58,14 @@ public class Estoque {
         Estoque estoque = new Estoque();
 
         estoque.adicionarProduto(new Produto("Sunga", "Kit natação", "uniforme"));
-        // estoque.imprimirEstoque();
+        estoque.adicionarProduto(new Produto("Maiô", "Kit natação", "uniforme"));
+        estoque.adicionarProduto(new Produto("Blusa M/M", "Kit Educando", "uniforme"));
+        estoque.imprimirEstoque();
 
         // Map<String, Integer> totais = estoque.quantidadeTotalPorProduto();
         // System.out.println(totais);
 
     }
 }
+
+

@@ -29,8 +29,8 @@ public class Tamanho {
 
     @Override
     public String toString() {
-        return "\n{Tamanho= " + tamanho +
-                ", Quantidade= " + quantidade +
-                '}';
+        return "\nTamanho= " + tamanho +
+                ", Quantidade= " + quantidade
+                ;
     }
 }
