@@ -14,7 +14,7 @@ public class Estoque {
         for (Entry<String, Produto> entry : produtos.entrySet()) {
             String nome = entry.getKey();
             Produto produto = entry.getValue(); 
-            System.out.println(entry.getKey());
+            System.out.println(nome);
             System.out.println(produto.verificarQuantidade());
         }
     }
@@ -34,6 +34,10 @@ public class Estoque {
         }
     }
 
+    public Produto obterProduto(String item) {
+        return produtos.get(item);
+    }
+
     public void adicionarProduto(Produto produto) {
         String nome = produto.getNome();
         String tipo = produto.getTipo();
@@ -43,23 +47,35 @@ public class Estoque {
     }
 
     public void modificarQuantidade(String item, String tam, int quant) {
-            Produto produto = produtos.get(item);
-            produto.alterarQuantidade(tam, quant);
+            Produto produto = obterProduto(item);
+            if (produto != null) {
+                produto.alterarQuantidade(tam, quant);
+            } else {
+                System.out.println("Produto não encontrado");
+            }
         }
     
     public void imprimirEstoqueDoProduto(String item) {
-        Produto produto = produtos.get(item);
-        System.out.println(produto);   
+        Produto produto = obterProduto(item);
+        if (produto != null) {
+            System.out.println(produto);   
+        } else {
+            System.out.println("Produto não encontrado");
         }
+    }
 
     public void quantidadeTotalPorProduto(String item){
-        Produto produto = produtos.get(item);
-        List<Tamanho>tamanhosPorProduto = produto.verificarQuantidade();
-        int total = 0;
-        for (Tamanho t : tamanhosPorProduto) {
-            total += t.getQuantidade();
+        Produto produto = obterProduto(item);
+        if (produto != null) {
+            List<Tamanho>tamanhosPorProduto = produto.verificarQuantidade();
+            int total = 0;
+            for (Tamanho t : tamanhosPorProduto) {
+                total += t.getQuantidade();
+            }
+            System.out.println(item + " têm " + total + " unidades.");
+        } else {
+            System.out.println("Produto não encontrado");
         }
-        System.out.println(item + " têm " + total + " unidades.");
     }
         
 
